@@ -1,0 +1,128 @@
+$hexagon-width: 55px;
+$hexagon-height: $hexagon-width * 0.46;
+$hexagon-margin: 10px;
+$primary: #3a98bc;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.upperBar {
+  background-color: #4d3c3e;
+  height: 50px;
+  width: 100vw;
+
+  @media only screen and (max-width: 320px) {
+    height: 40px;
+  }
+}
+.hexagon {
+  width: $hexagon-width;
+  height: $hexagon-height;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  padding: 0.5em;
+  text-align: center;
+  z-index: 1;
+
+  @media only screen and (max-width: 320px) {
+    width: 45px;
+    height: 20px;
+    top: 10px;
+  }
+
+  &-image {
+    background: white;
+    object-fit: cover;
+    object-position: center;
+    padding: 6px;
+  }
+
+  &::after {
+    content: '';
+  }
+
+  &::after,
+  &-image {
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    display: block;
+    position: absolute;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    z-index: -1;
+    transition: all 0.2s ease-in;
+  }
+}
+
+#barBehindName {
+  position: absolute;
+  top: 10px;
+  left: 48px;
+  max-width: 60vw;
+  height: 30px;
+  background: $primary;
+  border-radius: 20px;
+
+  @media only screen and (max-width: 320px) {
+    left: 35px;
+    top: 7px;
+    height: 27px;
+  }
+
+  #showName {
+    position: relative;
+    float: left;
+    top: 5px;
+    left: 21px;
+    padding-right: 3em;
+    padding-left: 0.5em;
+    max-width: 27ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 30px;
+    font-size: 15px;
+    color: white;
+
+    @media only screen and (max-width: 320px) {
+      top: 5px;
+    }
+  }
+}
+
+.triangle-left {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 60px solid #4d3c3e;
+  border-left: 40px solid transparent;
+
+  @media only screen and (max-width: 320px) {
+    border-top: 50px solid #4d3c3e;
+    border-left: 30px solid transparent;
+    top: 30px;
+  }
+}
+.triangle-right {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 60px solid #4d3c3e;
+  border-right: 40px solid transparent;
+
+  @media only screen and (max-width: 320px) {
+    border-top: 50px solid #4d3c3e;
+    border-right: 30px solid transparent;
+    top: 30px;
+  }
+}

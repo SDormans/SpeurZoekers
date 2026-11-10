@@ -1,0 +1,128 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20191206120709_AddSpeciesCoordinatesTable.cs" />
+    <Compile Remove="Migrations\20191206120709_AddSpeciesCoordinatesTable.Designer.cs" />
+    <Compile Remove="Migrations\20191213110458_SpeciesAndCoordinatesTable.cs" />
+    <Compile Remove="Migrations\20191213110458_SpeciesAndCoordinatesTable.Designer.cs" />
+    <Compile Remove="Migrations\20191217122121_SpeciesCoordinates.cs" />
+    <Compile Remove="Migrations\20191217122121_SpeciesCoordinates.Designer.cs" />
+    <Compile Remove="Migrations\20200117093235_FixUserRelations.cs" />
+    <Compile Remove="Migrations\20200117093235_FixUserRelations.Designer.cs" />
+    <Compile Remove="Migrations\20200117094338_FixUserRelations.cs" />
+    <Compile Remove="Migrations\20200117094338_FixUserRelations.Designer.cs" />
+    <Compile Remove="Migrations\20200205150219_AddCollectibleTypeTexts.cs" />
+    <Compile Remove="Migrations\20200205150219_AddCollectibleTypeTexts.Designer.cs" />
+    <Compile Remove="Migrations\20200208131915_AddRegions.cs" />
+    <Compile Remove="Migrations\20200208131915_AddRegions.Designer.cs" />
+    <Compile Remove="Migrations\20200210103859_AddRegion.cs" />
+    <Compile Remove="Migrations\20200210103859_AddRegion.Designer.cs" />
+    <Compile Remove="Migrations\20200207113834_REMOVEME.cs" />
+    <Compile Remove="Migrations\20200207113834_REMOVEME.Designer.cs" />
+    <Compile Remove="Migrations\20200207123912_REMOVEME2.cs" />
+    <Compile Remove="Migrations\20200207123912_REMOVEME2.Designer.cs" />
+    <Compile Remove="Migrations\20200207135734_REMOVE.cs" />
+    <Compile Remove="Migrations\20200207135734_REMOVE.Designer.cs" />
+    <Compile Remove="Migrations\20200210104433_AddRegionTable.cs" />
+    <Compile Remove="Migrations\20200210104433_AddRegionTable.Designer.cs" />
+    <Compile Remove="Migrations\20200211114042_REMOVE.cs" />
+    <Compile Remove="Migrations\20200211114042_REMOVE.Designer.cs" />
+    <Compile Remove="Migrations\20200211140208_ExtendCollectibleType.cs" />
+    <Compile Remove="Migrations\20200211140208_ExtendCollectibleType.Designer.cs" />
+    <Compile Remove="Migrations\20200212135542_ExtendedCollectibleType.cs" />
+    <Compile Remove="Migrations\20200212135542_ExtendedCollectibleType.Designer.cs" />
+    <Compile Remove="Migrations\20200224092524_ChangedCollectibleType.cs" />
+    <Compile Remove="Migrations\20200224092524_ChangedCollectibleType.Designer.cs" />
+    <Compile Remove="Migrations\20200226130048_TEST.cs" />
+    <Compile Remove="Migrations\20200226130048_TEST.Designer.cs" />
+    <Compile Remove="Migrations\20200313142517_AddedRegionBiotope.cs" />
+    <Compile Remove="Migrations\20200313142517_AddedRegionBiotope.Designer.cs" />
+    <Compile Remove="Migrations\20200313143110_AddedRegionBiotope.cs" />
+    <Compile Remove="Migrations\20200313143110_AddedRegionBiotope.Designer.cs" />
+    <Compile Remove="Migrations\20200325110123_ChangedCollectibleTypeChoiceIdName.cs" />
+    <Compile Remove="Migrations\20200325110123_ChangedCollectibleTypeChoiceIdName.Designer.cs" />
+    <Compile Remove="Migrations\20200413120033_AddedAvatars.cs" />
+    <Compile Remove="Migrations\20200413120033_AddedAvatars.Designer.cs" />
+    <Compile Remove="Migrations\20200413120406_AddedAvatars.cs" />
+    <Compile Remove="Migrations\20200413120406_AddedAvatars.Designer.cs" />
+    <Compile Remove="Migrations\20200413120705_AddedAvatars.cs" />
+    <Compile Remove="Migrations\20200413120705_AddedAvatars.Designer.cs" />
+    <Compile Remove="Migrations\20200413121258_AddedAvatars.cs" />
+    <Compile Remove="Migrations\20200413121258_AddedAvatars.Designer.cs" />
+    <Compile Remove="Migrations\20200415132645_test.cs" />
+    <Compile Remove="Migrations\20200415132645_test.Designer.cs" />
+    <Compile Remove="Migrations\20200415134005_test.cs" />
+    <Compile Remove="Migrations\20200415134005_test.Designer.cs" />
+    <Compile Remove="Migrations\20200416120218_AddAvatars.cs" />
+    <Compile Remove="Migrations\20200416120218_AddAvatars.Designer.cs" />
+    <Compile Remove="Migrations\20200416120534_test.cs" />
+    <Compile Remove="Migrations\20200416120534_test.Designer.cs" />
+    <Compile Remove="Migrations\20200416122633_AddAvatars.cs" />
+    <Compile Remove="Migrations\20200416122633_AddAvatars.Designer.cs" />
+    <Compile Remove="Migrations\20200416123057_AddAvatars.cs" />
+    <Compile Remove="Migrations\20200416123057_AddAvatars.Designer.cs" />
+    <Compile Remove="Migrations\20200420081537_AddAvatars.cs" />
+    <Compile Remove="Migrations\20200420081537_AddAvatars.Designer.cs" />
+    <Compile Remove="Migrations\20200423103235_AddMapRefreshTime.cs" />
+    <Compile Remove="Migrations\20200423103235_AddMapRefreshTime.Designer.cs" />
+    <Compile Remove="Migrations\20200528114429_AddActivities.cs" />
+    <Compile Remove="Migrations\20200528114429_AddActivities.Designer.cs" />
+    <Compile Remove="Migrations\20200604090401_AddActivities.cs" />
+    <Compile Remove="Migrations\20200604090401_AddActivities.Designer.cs" />
+    <Compile Remove="Migrations\20200610133443_AddActivities.cs" />
+    <Compile Remove="Migrations\20200610133443_AddActivities.Designer.cs" />
+    <Compile Remove="Migrations\20200617080415_TEST.cs" />
+    <Compile Remove="Migrations\20200617080415_TEST.Designer.cs" />
+    <Compile Remove="Migrations\20200622135110_TempResetCodeAddedtoAppUser.cs" />
+    <Compile Remove="Migrations\20200622135110_TempResetCodeAddedtoAppUser.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="dbsettings.Debug.json" />
+    <None Remove="dbsettings.Release.json" />
+    <None Remove="localsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="dbsettings.Debug.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="dbsettings.Release.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Speurzoekers.Common\Speurzoekers.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.entityframeworkcore\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Stores">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.stores\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

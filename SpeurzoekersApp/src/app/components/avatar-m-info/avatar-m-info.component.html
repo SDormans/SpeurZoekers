@@ -1,0 +1,61 @@
+<img src="assets/photo/lenteklein.jpg" alt="logo" id="logo">
+
+
+<div class="avatar-info">
+  <div id="car" class="carousel carousel-slider info">
+    <div class="carousel-item" href="#one!">
+      <img src="{{ avatarPic }}" class="bigPic" alt="" />
+      <div *ngIf="showBadge === true" class="badge">
+        <button *ngIf="isUserAvatar === false" id="confirm" (click)="popUpAvatar()">Ik wil deze avatar!</button>
+        <button *ngIf="isUserAvatar === true" id="confirm" (click)="confirmAvatar()">Ik wil deze avatar!</button>
+      </div>
+      <h4 class="properties">{{ avatar.name }}</h4>
+      <div class='infoText'></div>
+    </div>
+    <div class="carousel-item" id="second" href="#two!">
+      <h4 class="properties">{{ avatar.name }}</h4>
+      <div class='infoText'></div>
+      <figure>
+        <img src="{{ avatarPic }}" class="smallPic" alt="" />
+        <svg class="svg" height="100" width="100">
+          <polygon class="cell"
+            points="5,44.64101615137754 25,79.28203230275508 65,79.28203230275508 85,44.64101615137754 65,10 25,10">
+          </polygon>
+        </svg>
+      </figure>
+    </div>
+    <div class="carousel-item" id="third" href="#three!">
+      <h4 class="properties">{{ avatar.name }}</h4>
+      <div class='infoText'></div>
+      <figure>
+        <img src="{{ avatarPic }}" class="smallPic" alt="" />
+        <svg class="svg" height="100" width="100">
+          <polygon class="cell"
+            points="5,44.64101615137754 25,79.28203230275508 65,79.28203230275508 85,44.64101615137754 65,10 25,10">
+          </polygon>
+        </svg>
+      </figure>
+    </div>
+    <div class="carousel-item" id="fourth" href="#four!">
+      <h4 class="properties">{{ avatar.name }}</h4>
+      <div class='infoText'></div>
+      <figure>
+        <img src="{{ avatarPic }}" class="smallPic" alt="" />
+        <svg class="svg" height="100" width="100">
+          <polygon class="cell"
+            points="5,44.64101615137754 25,79.28203230275508 65,79.28203230275508 85,44.64101615137754 65,10 25,10">
+          </polygon>
+        </svg>
+      </figure>
+    </div>
+  </div>
+</div>
+<div id="popup" class="hidden" (clickOutside)="hide()"
+  [attachOutsideOnClick]="attachOutsideOnClick">
+  <h6 id="header">{{avatar.name}}</h6>
+  <img src="{{ avatarPic }}" />
+  <p id="question">Weet je zeker dat je deze avatar wil kiezen?</p>
+  <button matt-raised-button id="footerJa" (click)= "confirmAvatar()">Ja!</button>
+  <button matt-raised-button id="footerNee" (click)= "notThisAvatar()">Nee</button>
+</div>
+<div id="border" class="hidden"></div>

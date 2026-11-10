@@ -1,0 +1,64 @@
+#container{
+  width:100vw;
+  height: 100vh;
+  position: absolute;
+
+
+  #background-card{
+    width: 82vw;
+    height: 92vh;
+    overflow: auto;
+    position: absolute;
+    top: 7.5vh;
+    left: 9vw;
+    
+
+    .logo{
+      width: 82vw;
+      height: auto;
+      opacity: 1;
+      margin: 15px 4px 25px 4px;
+      display: flex;
+      justify-content: center;
+
+      img{
+        width: 30%;
+        height: auto;
+      }
+    }
+    .text{
+      width: 82vw;
+      height: auto;
+      position: absolute;
+      margin: 4px 4px;
+
+      p{
+        font-size: 0.8em;
+        margin: 0 12px 20px 8px;
+
+        @media only screen and (max-width: 320px){
+          font-size: 0.7em;
+        }
+      }
+      .credits{
+        font-size: 0.7em;
+        margin: 0 8px 0 8px;
+
+        @media only screen and (max-width: 320px){
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+  #background-card::after{
+    content:'';
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+    position: absolute;
+    background-color: white;
+    z-index:-1;
+  }
+}

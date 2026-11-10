@@ -1,0 +1,85 @@
+//@import "./assets/materialize/css/materialize.min.css";
+/* You can add global styles to this file, and also import other style files */
+// @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Begin Of variable */
+$iphone8-breakpoint: 667px;
+$laptop-breakpoint: 800px;
+$primary: #3a98bc;
+
+/* End Of variable */
+
+@media (max-height: $iphone8-breakpoint) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  app-root {
+    height: 5%;
+  }
+  app-map {
+    height: 93%;
+  }
+  #bottom-menu {
+    height: 4.75%;
+  }
+  // .mat-raised-button{
+  //   height: 4.5%;
+  //   line-height: 4%;
+  //   font-size: 15px;
+  // }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sarabun', sans-serif;
+}
+
+body {
+  background-color: $primary;
+  touch-action: none;
+}
+
+#bottom-menu {
+  background-color: $primary;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Map Stylings
+.ol-attribution,
+.ol-rotate,
+.ol-zoom {
+  display: none;
+}
+
+.locateUser > mat-toolbar > mat-toolbar-row > button {
+  font-size: 30px;
+  padding: 2px 6px 0px 6px;
+}
+
+// End Of Map Stylings
+
+// Make menu appear under burger icon.
+div.mat-menu-content:not(:empty) {
+  padding-top: 27px;
+}
+div.cdk-overlay-container{
+  position: absolute;
+  top: 13px;
+  right: 0; 
+}

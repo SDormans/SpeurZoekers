@@ -1,0 +1,123 @@
+.map,
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+#border {
+  position: fixed;
+  height: 33vh;
+  width: 80vw;
+  right: -80vw;
+  top: 20vh;
+  background-color: #37b32e;
+  clip-path: polygon(
+    20% 0,
+    100% 0,
+    100% 2%,
+    20.742781353% 2%,
+    1.485562705% 50%,
+    20.742781353% 98%,
+    100% 98%,
+    100% 100%,
+    20% 100%,
+    0 50%
+  );
+}
+
+#popup {
+  position: fixed;
+  height: 33vh;
+  width: 80vw;
+  right: -80vw;
+  top: 20vh;
+  background-color: rgba($color: white, $alpha: 0.9);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+
+  img {
+    width: 45%;
+    position: absolute;
+    left: 20%;
+    top: 15%;
+  }
+}
+
+.show {
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+  from {
+    right: -80vw;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+.hide {
+  animation-duration: 1s;
+  animation-name: slideout;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideout {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -80vw;
+  }
+}
+
+.hidden {
+  right: -80vw;
+}
+
+.badge {
+  color: white;
+  border-radius: 50%;
+  width: 15vw;
+  height: 15vw;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  background-color: #3a98bc;
+}
+.num {
+  position: relative;
+  text-align: left;
+  top: 15%;
+  font-size: 6vw;
+  width: 100%;
+  text-align: center;
+}
+.word {
+  position: relative;
+  margin-top: 10%;
+  font-size: 3vw;
+  width: 100%;
+  text-align: center;
+}
+
+#header {
+  position: relative;
+  top: 5%;
+  color: #37b32e;
+  text-align: center;
+}
+
+#footer {
+  position: absolute;
+  left: 40%;
+  bottom: 5%;
+  font-size: 4vw;
+  color: #37b32e;
+}

@@ -1,0 +1,128 @@
+<img src="assets/photo/Logo in actie without neg.space.png" alt="logo" id="logo" />
+
+<div class="honeycomb">
+  <div class="hexagon">
+    <div class="hex-content">
+      <h3>Maak een profiel</h3>
+      <div class="underline"></div>
+      <form [formGroup]="formModel" class="example-form" autocomplete="off" (submit)="onSubmit()">
+        <div class="warning">
+          <small>Let op! Alle velden zijn verplicht.</small>
+        </div>
+        <div class="form-group required">
+          <input type="text" class="form-control" matInput placeholder="voornaam" formControlName="name" name="name"
+            required /><br />
+          <label *ngIf="
+              isSubmitted &&
+              formModel.get('name').hasError('required')
+            "><small>Veld is verplicht</small></label>
+        </div>
+        <div class="form-group required">
+          <input type="email" matInput placeholder="e-mail" formControlName="email" name="email" required /><br />
+          <label *ngIf="
+              isSubmitted &&
+              formModel.get('email').hasError('email')
+            "><small>Ongeldig e-mailadres</small></label>
+          <label *ngIf="
+              isSubmitted &&
+              formModel.get('email').hasError('required')
+            "><small>Veld is verplicht</small></label>
+        </div>
+        <div class="form-group required">
+          <input type="text" class="form-control" minLength="4" maxlength="4" matInput placeholder="postcode (1234)"
+            formControlName="postcode" name="postcode" required /><br />
+
+          <label *ngIf="
+              (formModel.get('postcode').touched &&
+                formModel.get('postcode').errors ||formModel.get('postcode').errors && isSubmitted)
+              
+            "><small> Geef de vier cijfers van je postcode op</small></label>
+        </div>
+        <div formGroupName="passwords">
+          <div class="form-group required">
+            <input type="password" class="form-control" formControlName="password" placeholder="wachtwoord"
+              required /><br />
+          </div>
+
+          <label *ngIf="
+              formModel.get('passwords.password').touched &&
+              formModel.get('passwords.password').hasError('pattern')
+            "><small>Je wachtwoord moet minimaal 6 tekens bevatten, waarvan 1 hoofdletter, 1 kleine letter en 1
+              speciaal teken.
+            </small></label>
+          <label *ngIf="
+            isSubmitted &&
+            formModel.get('passwords.password').hasError('required')
+          "><small>Veld is verplicht</small></label>
+          <div class="form-group required">
+            <input type="password" class="form-control" formControlName="confirmPassword"
+              placeholder="herhaal wachtwoord" required /><br />
+          </div>
+
+          <label *ngIf="
+              formModel.get('passwords.confirmPassword').touched &&
+              formModel.get('passwords.confirmPassword').errors &&
+              formModel.get('passwords.confirmPassword').errors.passwordMismatch
+            "><small>Wachtwoord komt niet overeen</small></label>
+          <label *ngIf="
+            isSubmitted &&
+            formModel.get('passwords.confirmPassword').hasError('required')
+          "><small>Veld is verplicht</small></label>
+        </div>
+
+        <div class="form-group">
+          <button class="registration-button" mat-raised-button class="registration-button" type="submit"
+            color="secondary">
+            bevestig
+          </button>
+        </div>
+      </form>
+      <!-- <div class="login">
+                <a routerLink="/login">
+                    <h3 class="under">Inloggen</h3>
+                </a>
+                <div class="underline"></div>
+            </div> -->
+    </div>
+  </div>
+</div>
+
+<!--<img src="assets/icons/logo.png" alt="logo" id="logo">
+
+<div class="registerPage">
+    <h3>Inloggen</h3>
+    <div class="underline"></div>
+    <h3>Maak een profiel</h3>
+    <div class="underline"></div>
+    <form [formGroup]="formModel" class="example-form" autocomplete="off" (submit)="onSubmit()">    
+        <div class="registerForm">
+            <div class="form-group required">
+                <input type="text" class="form-control" matInput placeholder="naam" formControlName="name" name="name" required><br>
+                <label *ngIf="formModel.get('name').touched && formModel.get('name').errors?.required && isSubmitted"><small>Naamveld is verplicht</small></label>
+            </div>
+            <div class="form-group required">
+                <input type="email" matInput placeholder="e-mail" formControlName="email" name="email" required><br>
+                <label *ngIf="formModel.get('email').touched && formModel.get('email').errors?.email"><small>Ongeldige e-mailadres</small></label> 
+                <label *ngIf="formModel.get('email').touched && formModel.get('email').errors?.required && isSubmitted"><small>Email is verplicht</small></label>
+            </div>
+            <div formGroupName="passwords">
+                <div class="form-group required">
+                    <input type="password" class="form-control" formControlName="password" placeholder="wachtwoord" required><br>
+                </div>
+                <label *ngIf="formModel.get('passwords.password').touched && formModel.get('passwords.password').errors?.required && isSubmitted"><small>Wachtwoord is verplicht</small></label>
+                <label *ngIf="formModel.get('passwords.password').touched && formModel.get('passwords.password').errors?.minlength"><small>Kies minimaal 6 karakters</small></label>
+                <div class="form-group required">
+                    <input type="password" class="form-control" formControlName="confirmPassword" placeholder="herhaal wachtwoord" required><br>
+                </div>
+                <label *ngIf="formModel.get('passwords.confirmPassword').touched && formModel.get('passwords.confirmPassword').errors?.required && isSubmitted"><small>Verplicht veld</small></label>
+                <label *ngIf="formModel.get('passwords.confirmPassword').touched && formModel.get('passwords.confirmPassword').errors?.passwordMismatch"><small>Wachtwoord komt niet overeen</small></label>
+            </div>
+            <div>
+                <small>Let op! Alle velden zijn verplicht.</small>
+            </div>
+            <div class="form-group">
+                <button mat-raised-button type="submit" color="secondary">Begin</button>
+            </div>
+        </div>   
+    </form>
+</div>> -->

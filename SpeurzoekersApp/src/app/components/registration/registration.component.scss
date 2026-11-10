@@ -1,0 +1,241 @@
+$width: 180px;
+$height: ($width * 1.7320508075688772935274463);
+
+// Image background
+#logo {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.required {
+  margin: 3px auto;
+}
+
+// Hexagon
+.honeycomb {
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.94;
+}
+
+.hexagon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  background-color: rgba(77, 60, 62);
+  text-align: center;
+  //border: 3px solid #60BFC4;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.hexagon,
+.hexagon::before,
+.hexagon::after {
+  width: $width;
+  height: $height;
+}
+
+.hexagon::before {
+  background-color: inherit;
+  content: '';
+  position: absolute;
+  left: 0;
+  transform: rotate(-60deg);
+}
+
+.hexagon::after {
+  background-color: inherit;
+  content: '';
+  position: absolute;
+  left: 0;
+  transform: rotate(60deg);
+}
+
+.hex-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $width * 1.4;
+  font-size: 1rem;
+  text-align: center;
+  z-index: 100;
+}
+
+//Hexagon text
+.underline {
+  width: 160px;
+  border-top: 1.2px solid #fff;
+  margin: 5px auto 10px auto;
+}
+
+input {
+  background-color: rgba(150, 135, 121, 0.9);
+  color: #fff;
+  text-align: center;
+  //padding: 5px 0;
+  font-size: 13px;
+  font-weight: bold;
+  //margin: 4px auto;
+  border: none;
+}
+
+small {
+  font-size: 8px;
+}
+
+button {
+  margin: 10px auto;
+  font-weight: bold;
+}
+
+button:active {
+  background-color: #627dee;
+  color: #fff;
+}
+
+.registration-button {
+  font-size: 15px;
+
+  @media screen and (max-width: 320px) {
+    font-size: 11px;
+  }
+}
+
+a {
+  color: #fff;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+::placeholder {
+  color: lightgray;
+}
+
+// Responsive
+@media screen and (min-width: 320px) {
+  $width: 160px;
+  $height: ($width * 1.7320508075688772935274463);
+  .hexagon,
+  .hexagon::before,
+  .hexagon::after {
+    width: $width;
+    height: $height;
+  }
+  .registration-button {
+    line-height: 0px;
+    height: 20px;
+  }
+
+  .hex-content {
+    padding-top: 10px;
+  }
+
+  .underline {
+    width: 155px;
+    margin: 9px auto 3px auto;
+  }
+
+  input {
+    padding: 4px 10px;
+    font-size: 10px;
+    margin: 2px auto;
+  }
+
+  h3 {
+    font-size: 13px;
+  }
+
+  small {
+    font-size: 7px;
+  }
+  .warning {
+    margin: -10px auto 0 auto;
+  }
+  form {
+    margin: 10px auto;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  $width: 185px;
+  $height: ($width * 1.7320508075688772935274463);
+  .hexagon,
+  .hexagon::before,
+  .hexagon::after {
+    width: $width;
+    height: $height;
+  }
+
+  .underline {
+    width: 180px;
+    margin: 10px auto 3px auto;
+  }
+
+  input {
+    padding: 5px 12px;
+    font-size: 13px;
+    margin: 3px auto;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  small {
+    font-size: 9px;
+  }
+  form {
+    margin: 15px auto 10 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  $width: 235px;
+  $height: ($width * 1.7320508075688772935274463);
+  .hexagon,
+  .hexagon::before,
+  .hexagon::after {
+    width: $width;
+    height: $height;
+  }
+
+  #logo {
+    width: 90%;
+  }
+  .registration {
+    margin: 10px auto;
+  }
+
+  form {
+    margin: 25px auto;
+  }
+
+  input {
+    padding: 5px 18px;
+    font-size: 15px;
+    margin: 3px auto;
+  }
+  .warning {
+    margin: -20px auto 0 auto;
+  }
+  small {
+    font-size: 12px;
+  }
+  .underline {
+    width: 230px;
+    margin: 12px auto 3px auto;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}

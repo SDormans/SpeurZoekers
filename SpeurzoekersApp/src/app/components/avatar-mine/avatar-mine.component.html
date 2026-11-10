@@ -1,0 +1,20 @@
+<div id="container-avatars">
+  <section>
+    <h1>Verander je avatar hier!</h1>
+    <span *ngIf="pointsSufficient === false">Je hebt {{uPoints}} punten. Je hebt nog {{needPoints}} punten nodig om een nieuwe avatar te kiezen.</span>
+    <span *ngIf="pointsSufficient === true">Je hebt {{uPoints}} punten. Je hebt genoeg punten om een nieuwe avatar te kiezen.</span>
+  </section>
+  <div class="honeycomb-container">
+    <div *ngFor="let column of avatarColumns" class="honeycomb">
+      <div *ngFor="let avatar of column">
+        <div [routerLink]="['/mavatar-info/', avatar.index]"  class="hexagon"
+              [class.bigger]="avatar.index === currentAvatarIndex"
+              [class.white]="avatar.isCollected === true && avatar.index !== currentAvatarIndex"
+              [class.transparent]="avatar.isCollected === false" (click)="selectAvatar(avatar.index)"
+              [ngClass]="{ selected: avatar.selected }">
+          <img src="{{ avatar.pic }}" title="{{ avatar.name }}" class="smallPic" alt="avatar" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

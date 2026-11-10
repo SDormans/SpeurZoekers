@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>DeSpeurzoekersCon</AssemblyName>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <ApplicationIcon>Speurzoekers.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SpeurzoekersService\Speurzoekers.Common\Speurzoekers.Common.csproj" />
+    <ProjectReference Include="..\..\SpeurzoekersService\Speurzoekers.Data\Speurzoekers.Data.csproj" />
+  </ItemGroup>
+
+</Project>

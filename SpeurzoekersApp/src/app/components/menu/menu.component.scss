@@ -1,0 +1,21 @@
+.hamburger {
+  display: flex;
+  justify-content: flex-end;
+
+  .menu-button {
+    background: transparent;
+  }
+  .hamburger-icon {
+    z-index: 1;
+    div {
+      width: 35px;
+      height: 1px;
+      background-color: white;
+      margin: 9px 0;
+    }
+  }
+}
+
+button.mat-menu-item {
+  text-align: left;
+}

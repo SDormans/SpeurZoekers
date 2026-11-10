@@ -1,0 +1,40 @@
+<div [class]="biot">
+  <h4>{{ biot }}</h4>
+</div>
+<div class="background-canvas">
+  <div class="honeycomb-container">
+    <div *ngFor="let column of collectibleColumns" class="honeycomb">
+      <div *ngFor="let col of column">
+        <div>
+          <div
+            class="hexagon"
+            [class.white]="col.collectedCounter > 0"
+            [class.transparent]="col.collectedCounter == 0"
+            [class.not-answered]="col.questionAnswered === false"
+          >
+            <a
+              *ngIf="col.collectedCounter > 0"
+              [routerLink]="['/collectible-info/', col.userCollectibleIdToAnswerQuestion]"
+            >
+              <img
+                src="{{ col.pic }}"
+                title="{{ col.id }} - collected {{ col.collectedCounter }}"
+                class="smallPic"
+                alt=""
+              />
+              <span *ngIf="col.collectedCounter > 1" class="num">{{ col.collectedCounter }}</span>
+            </a>
+            <a *ngIf="col.collectedCounter == 0">
+              <img
+                src="{{ col.pic }}"
+                title="{{ col.id }} - collected {{ col.collectedCounter }}"
+                class="smallPic"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

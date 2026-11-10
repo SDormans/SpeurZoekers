@@ -1,0 +1,106 @@
+<img src="assets/photo/lenteklein.jpg" alt="logo" id="logo">
+
+
+<div id="overlay" [hidden]="hasAnsweredCorrectly === null" (click)="hasAnsweredCorrectly = null" [routerLink]="[rUrl]">
+
+
+  <div class="confetti" *ngIf="hasAnsweredCorrectly">
+    <label class="correct">Je antwoord is goed! Gefeliciteerd, je wordt al een echte speurzoeker!</label>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+    <div class="confetti-piece"></div>
+  </div>
+
+  <div id="face-cell" *ngIf="!hasAnsweredCorrectly">
+
+    <div id="face-container">
+      <div id="error-box">
+        <div class="dot"></div>
+        <div class="dot two"></div>
+        <div class="face2">
+          <div class="eye"></div>
+          <div class="eye right"></div>
+          <div class="mouth sad"></div>
+        </div>
+        <div class="shadow move"></div>
+      </div>
+    </div>
+    <label class="incorrect">Helaas,<br> het antwoord is fout. <br> Vang deze soort opnieuw en probeer het nog een
+      keer.</label>
+
+  </div>
+</div>
+
+<div class="collectible-info">
+  <div id="car" class="carousel carousel-slider info">
+    <div class="carousel-item" href="#one!">
+      <img src="{{ collectiblePic }}" class="bigPic" alt="" />
+      <div class="badge">
+        <div class='num'>{{ collectibleInfo.points }}</div>
+        <div class='word'>punten</div>
+      </div>
+      <h4 class="properties">{{ collectibleInfo.name }}</h4>
+      <div class='infoText'></div>
+    </div>
+    <div class="carousel-item" id="second" href="#two!">
+      <h4 class="properties">{{ collectibleInfo.name }}</h4>
+      <div class='infoText'></div>
+      <figure>
+        <img src="{{ collectiblePic }}" class="smallPic" alt="" />
+        <svg class="svg" height="100" width="100">
+          <polygon class="cell"
+            points="5,44.64101615137754 25,79.28203230275508 65,79.28203230275508 85,44.64101615137754 65,10 25,10">
+          </polygon>
+        </svg>
+      </figure>
+    </div>
+    <div class="carousel-item" id="third" href="#three!">
+      <h4 class="properties">{{ collectibleInfo.name }}</h4>
+      <div class='infoText'></div>
+      <figure>
+        <img src="{{ collectiblePic }}" class="smallPic" alt="" />
+        <svg class="svg" height="100" width="100">
+          <polygon class="cell"
+            points="5,44.64101615137754 25,79.28203230275508 65,79.28203230275508 85,44.64101615137754 65,10 25,10">
+          </polygon>
+        </svg>
+      </figure>
+    </div>
+    <div class="carousel-item" id="fourth" href="#four!">
+      <h4 class="properties">{{ collectibleInfo.name }}</h4>
+      <div class='infoText'></div>
+      <figure>
+        <img src="{{ collectiblePic }}" class="smallPic" alt="" />
+        <svg class="svg" height="100" width="100">
+          <polygon class="cell"
+            points="5,44.64101615137754 25,79.28203230275508 65,79.28203230275508 85,44.64101615137754 65,10 25,10">
+          </polygon>
+        </svg>
+      </figure>
+    </div>
+    <div *ngIf="hasAnswered === false" class="carousel-item" href="#five!">
+      <img src="{{ collectiblePic }}" class="bigPic" alt="" />
+      <div class="badge">
+        <div class='num'>+{{ collectibleInfo.questionPoints }}</div>
+        <div class='word'>extra</div>
+      </div>
+      <h4 class="properties">Vraag</h4>
+      <div class="questionText">{{ collectibleInfo.questionText }}</div>
+      <ol>
+        <li *ngFor="let choice of choices">
+          <button (click)="showCorrectness(choice)">{{ choice.text }}</button>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

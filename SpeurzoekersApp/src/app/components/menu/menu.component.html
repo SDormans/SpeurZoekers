@@ -1,0 +1,19 @@
+<div dir="rtl" class="hamburger">
+  <button class="menu-button" mat-button [matMenuTriggerFor]="menu" (clickOutside)="closeMenu()">
+    <div class="hamburger-icon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </button>
+  <mat-menu class="dropdown" #menu="matMenu" xPosition="before">
+    <button routerLink="/landingpage" class="menu-item" mat-menu-item>Home</button>
+    <button routerLink="/map" class="menu-item" mat-menu-item>Spel</button>
+    <button routerLink="/biotopes" class="menu-item" mat-menu-item>Mijn soorten</button>
+    <button routerLink="/activities" class="menu-item" mat-menu-item>Activiteiten</button>
+    <button routerLink="/mijnavatars" class="menu-item" mat-menu-item>Mijn Avatars</button>
+    <button routerLink="/instructions" class="menu-item" mat-menu-item>Instructies</button>
+    <button routerLink="/about" class="menu-item" mat-menu-item>About</button>
+    <button class="menu-item" (click)="logout()" mat-menu-item>Log out</button>
+  </mat-menu>
+</div>

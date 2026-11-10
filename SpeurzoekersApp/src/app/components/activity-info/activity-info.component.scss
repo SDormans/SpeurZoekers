@@ -1,0 +1,52 @@
+#logo {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#info {
+  position: absolute;
+  overflow-y: auto;
+  left: 7%;
+  top: 12%;
+  height: 88%;
+  width: 86%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.image {
+  position: relative;
+  left: 7%;
+  width: 86%;
+  border: 2px solid #37b32e;
+}
+
+#one {
+  margin-top: 4%;
+  margin-bottom: 0%;
+}
+
+#two {
+  margin-top: -21%;
+  margin-bottom: 25%;
+}
+
+#title {
+  margin-top: 4%;
+  margin-left: 6%;
+  margin-right: 6%;
+  color: #37b32e;
+  text-align: center;
+}
+
+#text {
+  margin-top: 7%;
+  margin-left: 6%;
+  margin-right: 6%;
+  margin-bottom: 25%;
+  font-size: 0.8em;
+}
+
+p {
+  margin: 0.5em 0 0 0;
+}

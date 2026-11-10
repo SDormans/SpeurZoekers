@@ -1,0 +1,29 @@
+<div class="background-canvas">
+  <section class="header">
+    <h1>Kies je avatar!</h1>
+    <p>Let op! Wil je later een andere avatar?</p>
+    <p>Dan moet je eerst punten verzamelen door soorten te vangen.</p>
+  </section>
+  <div class="honeycomb-container">
+    <div *ngFor="let column of avatarColumns" class="honeycomb">
+      <div *ngFor="let avatar of column">
+        <div>
+          <div
+            class="hexagon"
+            (click)="selectAvatar(avatar.index)"
+            [ngClass]="{ selected: avatar.selected }"
+          >
+            <a [routerLink]="['/avatar-info/', avatar.index]">
+              <img
+                src="{{ avatar.pic }}"
+                title="{{ avatar.name }}"
+                class="smallPic"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

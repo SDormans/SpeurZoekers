@@ -1,0 +1,266 @@
+@import '../../../assets/materialize/css/materialize.min.css';
+
+$primary: #3a98bc;
+
+* {
+  font-family: 'Comic Sans MS', 'Arial';
+}
+
+p {
+  margin: 0.5em 0 0 0;
+}
+
+#logo {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.bigPic {
+  height: 200px;
+  display: block;
+  margin: 0px auto;
+}
+.smallPic {
+  height: 50px;
+  position: absolute;
+  margin: 20px 0px 0px 20px;
+}
+.svg {
+  position: absolute;
+}
+.cell {
+  fill-opacity: 0;
+  stroke: green;
+  stroke-width: 2;
+}
+
+.avatar-info {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  .info {
+    width: 90%;
+    height: 85%;
+    margin: 0 auto;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .carousel-slider {
+    height: 85% !important;
+  }
+  .carousel-item {
+    padding: 5px 20px;
+  }
+  h4 {
+    color: green;
+    font-size: 17px;
+    margin-top: 10px;
+  }
+  .properties {
+    text-align: center;
+  }
+}
+figure {
+  position: absolute;
+  bottom: 71px;
+  right: 51px;
+}
+.infoText {
+  font-size: 12px;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 155px;
+  right: 40px;
+  background-color: $primary;
+
+  @media only screen and (max-width: 320px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  #confirm {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    width: 50px;
+    height: 70px;
+
+    @media only screen and (max-width: 320px) {
+      font-size: 12px;
+    }
+  }
+}
+
+// Indicators Material CSS
+.carousel .indicators .indicator-item {
+  background-color: rgb(163, 152, 152);
+  &.active {
+    background-color: green;
+  }
+}
+
+#border {
+  position: fixed;
+  height: 33vh;
+  width: 80vw;
+  right: -80vw;
+  top: 20vh;
+  background-color: #37b32e;
+  clip-path: polygon(
+    20% 0,
+    100% 0,
+    100% 2%,
+    20.742781353% 2%,
+    1.485562705% 50%,
+    20.742781353% 98%,
+    100% 98%,
+    100% 100%,
+    20% 100%,
+    0 50%
+  );
+}
+
+#popup {
+  position: fixed;
+  height: 33vh;
+  width: 80vw;
+  right: -80vw;
+  top: 20vh;
+  background-color: rgba($color: white, $alpha: 0.9);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+
+  img {
+    width: 45%;
+    position: absolute;
+    left: 28%;
+    top: 15%;
+
+    @media only screen and (max-width: 320px) {
+      width: 32%;
+      left: 34%;
+      top: 18%;
+    }
+  }
+}
+
+.show {
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+  from {
+    right: -80vw;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+.hide {
+  animation-duration: 1s;
+  animation-name: slideout;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideout {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -80vw;
+  }
+}
+
+.hidden {
+  right: -80vw;
+}
+
+.badge2 {
+  color: white;
+  border-radius: 50%;
+  width: 15vw;
+  height: 15vw;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  background-color: #3a98bc;
+}
+.num {
+  position: relative;
+  text-align: left;
+  top: 15%;
+  font-size: 6vw;
+  width: 100%;
+  text-align: center;
+}
+.word {
+  position: relative;
+  margin-top: 10%;
+  font-size: 3vw;
+  width: 100%;
+  text-align: center;
+}
+
+#header {
+  position: relative;
+  top: 5%;
+  color: #37b32e;
+  text-align: center;
+}
+
+#question {
+  position: relative;
+  left: 5%;
+  top: 50%;
+  font-size: 3vw;
+  color: #37b32e;
+  text-align: center;
+
+  @media only screen and (max-width: 320px) {
+    top: 37%;
+  }
+}
+
+#footerJa {
+  position: absolute;
+  left: 60%;
+  bottom: 5%;
+  font-size: 4vw;
+  color: #fff;
+  background-color: #37b32e;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 20px;
+}
+
+#footerNee {
+  position: absolute;
+  left: 30%;
+  bottom: 5%;
+  font-size: 4vw;
+  color: #fff;
+  background-color: #f28d0d;
+  border-radius: 20px;
+  border: none;
+  padding: 5px 15px;
+}

@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <AppConfig>appsettings.$(Configuration).json</AppConfig>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'SpeurzoekersService' ">
+    <StartAction>Project</StartAction>
+    <ApplicationURL>https://localhost:44312;http://localhost:5000</ApplicationURL>
+    <LaunchUrl>swagger</LaunchUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+    <PackageReference Include="Moq" Version="4.13.1" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="SendGrid" Version="9.16.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="4.0.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Speurzoekers.Business\Speurzoekers.Business.csproj" />
+    <ProjectReference Include="..\Speurzoekers.Common\Speurzoekers.Common.csproj" />
+    <ProjectReference Include="..\Speurzoekers.Data\Speurzoekers.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Properties\launchSettings.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

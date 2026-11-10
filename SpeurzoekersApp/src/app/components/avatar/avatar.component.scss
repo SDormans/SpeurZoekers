@@ -1,0 +1,128 @@
+$hexagon-width: 23.335vw; //87.5px
+$hexagon-height: $hexagon-width;
+$hexagon-margin: -10.667vw; //Tussenruimte hexagon onder elkaar
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+section {
+  color: white;
+  padding-top: 15vw;
+  text-align: center;
+  width: 100%;
+  h1 {
+    font-weight: normal;
+    padding-bottom: 2vw;
+  }
+  
+  p {
+    font-size: small;
+  }
+
+  &.header {
+    padding-top: 5vw;
+  }
+
+  &.footer {
+    position: absolute;
+    bottom: 10vw;
+  }
+}
+
+.honeycomb-container {
+  height: 100vh;
+  display: flex;
+}
+
+.honeycomb:nth-child(even) {
+  margin-top: 11.734vw;
+  margin-left: -7.535vw;
+}
+.honeycomb:nth-child(odd) {
+  margin-left: -7.535vw;
+}
+
+.honeycomb:nth-child(1) {
+  margin-left: 10.667vw;
+}
+
+.honeycomb {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+
+  transform: translateY(-#{$hexagon-height/4});
+
+  .hexagon {
+    width: $hexagon-width;
+    height: $hexagon-height;
+    margin: $hexagon-height/2.1 0 $hexagon-margin -5vw;
+    position: relative;
+    padding: 0.5em;
+    text-align: center;
+    z-index: 1;
+
+    a {
+      position: relative;
+      left: 2vw;
+    }
+    .smallPic {
+      margin: 0.6vw 0 0 2vw;
+      height: 19vw;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+    }
+
+    &::before,
+    &::after {
+      top: 0%;
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      z-index: -1;
+      transition: all 0.2s ease-in;
+    }
+
+    &::before {
+      transform: scale(1.065);
+    }
+    &::after {
+      transform: scale(0.97);
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    /* For tablets: */
+    // margin-top: 5%;
+    &:nth-child(even) {
+      margin-top: 31.734;
+    }
+  }
+  @media only screen and (min-width: 768px) and (min-height: 1024px) {
+    /* For tablets: */
+    // margin-top: 20%;
+    &:nth-child(even) {
+      margin-top: 31.734;
+    }
+  }
+}
+
+.selected {
+  &::before {
+    background: white;
+  }
+}

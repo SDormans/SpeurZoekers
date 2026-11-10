@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>DeSpeurzoekersGui</AssemblyName>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <RootNamespace>UploadToolGui</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SpeurzoekersService\Speurzoekers.Common\Speurzoekers.Common.csproj" />
+    <ProjectReference Include="..\..\SpeurzoekersService\Speurzoekers.Data\Speurzoekers.Data.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,53 @@
+<img src="assets/photo/Logo in actie without neg.space.png" alt="logo" id="logo">
+
+<div class="honeycomb">
+  <div class="hexagon">
+    <div class="hex-content">
+      <h3>Inloggen</h3>
+      <div class="underline"></div>
+      <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group required">
+          <input class="imput-text" matInput placeholder="e-mail" formControlName="username" name="username" required
+            autofocus><br>
+            <label
+            *ngIf="
+              submitted &&
+              loginForm.get('username').hasError('required')
+            "
+            ><small>Veld is verplicht</small></label
+          >
+        </div>
+        <div class="form-group required">
+          <input class="imput-text" matInput placeholder="wachtwoord" formControlName="password" type="password"
+            name="password" required><br>
+            <label
+            *ngIf="
+              submitted &&
+              loginForm.get('password').hasError('required')
+            "
+            ><small>Veld is verplicht</small></label
+          >
+        </div>
+        <!-- <div class="rememberMe">
+          <label for="remember">
+            <input type="checkbox">&nbsp;Onthoud mij
+          </label>
+        </div> -->
+        <div class="form-group">
+          <button class="login-button" mat-raised-button class="login-button" type="submit">start</button>
+        </div>
+        <div class="forgetPasswordLink">
+          <p class="forgot-password" routerLink="/reset-password">Ik ben mijn wachtwoord vergeten</p>
+        </div><br>
+      </form>
+      
+      <div class="profile">
+        <a routerLink="/register">
+          <h3 class="under">Maak een profiel</h3>
+        </a>
+        <div class="underline"></div>
+      </div>
+
+    </div>
+  </div>
+</div>

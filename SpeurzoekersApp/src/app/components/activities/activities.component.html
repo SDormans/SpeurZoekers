@@ -1,0 +1,18 @@
+<div class="background-canvas">
+  <div id="background-container">
+
+    <div class="tabs">
+      <div *ngFor="let season of seasons" class="tab {{season.toLowerCase()}}" (click)="filter($event, season)">
+        <p>{{getSeasonName(season)}}</p>
+      </div>
+    </div>
+    <div class="background-opacity {{this.selectedSeason.toLowerCase()}}"></div>
+    <div id="container">
+      <figure *ngFor="let activity of filteredData" class="card" [routerLink]="['/activity-info/', activity.id]">
+        <img src="{{activity.image}}">
+        <figcaption>{{activity.name}}</figcaption>
+      </figure>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,72 @@
+// Image background
+.loading-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#logo {
+  width: 100vw;
+}
+
+h1 {
+  font-size: 54px;
+  color: #e5281f;
+  font-family: 'Comic Sans MS';
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: -30px;
+}
+
+@media screen and (min-width: 320px) {
+  #logo {
+    width: 95vw;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  #logo {
+    width: 90vw;
+  }
+
+  h1 {
+    font-size: 54px;
+  }
+}
+
+@media screen and (min-width: 776px) {
+  #logo {
+    width: 80vw;
+  }
+
+  h1 {
+    font-size: 64px;
+  }
+}
+
+@media screen and (min-width: 930px) {
+  #logo {
+    width: 70vw;
+  }
+  h1 {
+    font-size: 70px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  #logo {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #logo {
+    width: 45vw;
+  }
+}

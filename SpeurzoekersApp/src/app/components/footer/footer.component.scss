@@ -1,0 +1,151 @@
+$hexagon-width: 45px;
+$hexagon-height: $hexagon-width * 0.45;
+$hexagon-margin: 10px;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.lowerBar {
+  position: absolute;
+  bottom: 0;
+  background-color: #4d3c3e;
+  height: 50px;
+  width: 100vw;
+  opacity: 0.8;
+
+  @media only screen and (max-width: 320px) {
+    height: 40px;
+  }
+}
+.nav-container {
+  width: 100vw;
+
+  .nav {
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+    height: 50px;
+    width: 85vw;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    z-index: 5;
+    transform: translateY(#{$hexagon-height/4});
+
+    @media only screen and (max-width: 320px) {
+      height: 40px;
+    }
+
+    .hexagon {
+      width: $hexagon-width;
+      height: $hexagon-height;
+      position: relative;
+      padding: 0.5em;
+      text-align: center;
+      z-index: 1;
+      top: 10px;
+      outline: none;
+
+      @media only screen and (max-width: 320px) {
+        width: 35px;
+        height: 11px;
+        top: 7px;
+      }
+
+      &-image {
+        object-fit: cover;
+        object-position: center;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+      }
+
+      &::before,
+      &::after,
+      &-image {
+        top: -50%;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        display: block;
+        position: absolute;
+        -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        z-index: -1;
+        transition: all 0.2s ease-in;
+      }
+
+      &::before {
+        transform: scale(1.09);
+      }
+    }
+
+    .game {
+      &::before {
+        background: #3749ee;
+      }
+    }
+
+    .biotopes {
+      &::before {
+        background: #37b32e;
+      }
+    }
+
+    .activities {
+      &::before {
+        background: #e5281f;
+      }
+    }
+
+    .points {
+      &::before {
+        background: #f28d0d;
+      }
+    }
+
+    .pedometer {
+      &::before {
+        background: #60c0c4;
+      }
+    }
+  }
+}
+
+.triangle-bottomRight {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  width: 0;
+  height: 0;
+  border-bottom: 60px solid #4d3c3e;
+  border-left: 40px solid transparent;
+  opacity: 0.8;
+
+  @media only screen and (max-width: 320px) {
+    border-bottom: 50px solid #4d3c3e;
+    border-left: 30px solid transparent;
+    bottom: 40px;
+  }
+}
+.triangle-bottomLeft {
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  width: 0;
+  height: 0;
+  border-bottom: 60px solid #4d3c3e;
+  border-right: 40px solid transparent;
+  opacity: 0.8;
+
+  @media only screen and (max-width: 320px) {
+    border-bottom: 50px solid #4d3c3e;
+    border-right: 30px solid transparent;
+    bottom: 40px;
+  }
+}

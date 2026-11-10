@@ -1,0 +1,256 @@
+$hexagon-width: 185px;
+$hexagon-height: $hexagon-width * 0.5;
+$hexagon-margin: 50px;
+$hexagon-title-color: #37b32e;
+$hexagon-border-color: #37b32e;
+$honeycomb-max-width: 1000px;
+$viewport-thereshold: $hexagon-width + $hexagon-margin;
+
+.background-canvas {
+  background: url(/assets/photo/lenteklein.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.honeycomb-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  overflow: auto;
+}
+
+.honeycomb {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 85vh;
+  margin: 0 auto;
+  transform: translateY(#{$hexagon-height/4});
+  overflow: auto;
+  position: absolute;
+  top: 27px;
+  padding-top: 5px;
+
+  @media only screen and (max-width: 414px) and (max-height: 627px) {
+    height: 90vh;
+  }
+
+  @media only screen and (max-width: 359px) {
+    top: 17px;
+    padding-top: 0;
+  }
+
+  @media only screen and (min-width: 414px) and (min-height: 636px) {
+    height: 93vh;
+  }
+
+  .hexagon {
+    width: $hexagon-width;
+    height: $hexagon-height;
+    margin: $hexagon-height/2.1 0 $hexagon-margin;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+
+    @media only screen and (max-width: 359px) {
+      width: 136px;
+      height: 68px;
+      margin: 35px 0 32px 0;
+    }
+
+    @media only screen and (min-width: 360px) and (max-height: 640px) {
+      width: 176px;
+      height: 88px;
+      margin: 44px 0;
+    }
+
+    @media only screen and (min-width: 768px) and (min-height: 1024px) {
+      width: 260px;
+      height: 130px;
+      margin: 70px 0;
+    }
+
+    &-button {
+      background-color: #66ad20;
+      border: none;
+      color: white;
+      padding: 0.2px 65px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      top: 30px;
+      border-radius: 20px;
+      height: auto;
+      max-width: 164;
+
+      @media only screen and (max-width: 359px) {
+        font-size: 12px;
+        top: 15px;
+        //max-width: 120px;
+        padding: 0.2px 43px;
+      }
+      @media only screen and (min-width: 768px) and (min-height: 1024px) {
+        font-size: 25px;
+        top: 40px;
+        //max-width: 255px;
+        padding: 10px 90px;
+        border-radius: 30px;
+      }
+    }
+
+    &-image {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+    }
+
+    &::before,
+    &::after,
+    &-image {
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      display: block;
+      position: absolute;
+      -webkit-clip-path: polygon(
+        25% 5%,
+        75% 5%,
+        100% 50%,
+        75% 95%,
+        25% 95%,
+        0% 50%
+      );
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      z-index: -1;
+      transition: all 0.2s ease-in;
+    }
+
+    &::before {
+      transform: scale(1.065);
+    }
+  }
+}
+.water {
+  .hexagon-button {
+    background-color: #60c0c4;
+    padding: 0.2px 60px;
+
+    @media only screen and (max-width: 359px) {
+      padding: 0.2px 43px;
+    }
+    @media only screen and (min-width: 768px) and (min-height: 1024px) {
+      font-size: 25px;
+      top: 40px;
+      max-width: 255px;
+      padding: 10px 82px;
+    }
+  }
+  &::before {
+    background: #60c0c4;
+  }
+}
+.weide {
+  .hexagon-button {
+    background-color: #d3bb0b;
+    padding: 0.2px 60px;
+
+    @media only screen and (max-width: 359px) {
+      padding: 0.2px 43px;
+    }
+    @media only screen and (min-width: 768px) and (min-height: 1024px) {
+      font-size: 25px;
+      top: 40px;
+      max-width: 255px;
+      padding: 10px 82px;
+    }
+  }
+  &::before {
+    background: #d3bb0b;
+  }
+}
+.stad {
+  .hexagon-button {
+    background-color: #f28d0d;
+    @media only screen and (max-width: 359px) {
+      padding: 0.2px 50px;
+    }
+  }
+  &::before {
+    background: #f28d0d;
+  }
+}
+.park {
+  .hexagon-button {
+    background-color: #db1cd4;
+  }
+  &::before {
+    background: #db1cd4;
+  }
+}
+.bos {
+  .hexagon-button {
+    @media only screen and (max-width: 359px) {
+      padding: 0.2px 50px;
+    }
+  }
+  &::before {
+    background: #66ad20;
+  }
+}
+.kust {
+  .hexagon-button {
+    background-color: #efcda6;
+    padding: 0.2px 36px;
+
+    @media only screen and (max-width: 359px) {
+      padding: 0.2px 24px;
+    }
+  }
+  &::before {
+    background: #efcda6;
+  }
+}
+
+.left-column {
+  position: relative;
+  top: 94px;
+  left: 14px;
+
+  @media only screen and (max-width: 359px) {
+    top: 70px;
+    left: 11px;
+  }
+  @media only screen and (min-width: 360px) and (max-height: 640px) {
+    top: 89px;
+  }
+  @media only screen and (min-width: 768px) and (min-height: 1024px) {
+    top: 120px;
+  }
+}
+
+.right-column {
+  position: relative;
+  top: 0;
+  right: 14px;
+
+  @media only screen and (max-width: 359px) {
+    right: 11px;
+  }
+}

@@ -1,0 +1,135 @@
+$hexagon-width: 25vw;
+$hexagon-height: $hexagon-width;
+
+*,
+*::before {
+  box-sizing: border-box;
+}
+
+#container-avatars {
+  height: 100vh;
+  overflow: auto;
+}
+section {
+  color: white;
+  padding-top: 5vw;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 5vh;
+  z-index: -1;
+
+  h1 {
+    font-weight: normal;
+    margin-bottom: 3vh;
+  }
+
+  span {
+    font-size: small;
+    display: block;
+    max-width: 85vw;
+    text-align: left;
+    margin-left: 9.5vw;
+
+    @media only screen and (min-width: 360px) {
+      margin-left: 11vw;
+    }
+  }
+}
+
+.honeycomb-container {
+  width: 100vw;
+  height: 75vh;
+  display: flex;
+  position: relative;
+  top: 11vh;
+}
+
+.honeycomb:nth-child(even) {
+  margin-top: 18vw;
+  margin-left: -7.535vw;
+}
+.honeycomb:nth-child(odd) {
+  margin-left: -7.535vw;
+}
+
+.honeycomb:nth-child(1) {
+  margin-left: 10.667vw;
+}
+
+.honeycomb {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+
+  .hexagon {
+    width: $hexagon-width;
+    height: $hexagon-height;
+    position: relative;
+    outline: none;
+    margin-bottom: 9vw;
+
+    .smallPic {
+      top: 0%;
+      width: 100%;
+      height: 100%;
+      padding: 0.4em;
+      display: block;
+      position: absolute;
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      z-index: -1;
+    }
+
+    &::before {
+      content: '';
+      top: 0%;
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      z-index: -1;
+      transform: scale(1.2);
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    &:nth-child(even) {
+      margin-top: 31.734;
+    }
+  }
+  @media only screen and (min-width: 768px) and (min-height: 1024px) {
+    &:nth-child(even) {
+      margin-top: 31.734;
+    }
+  }
+}
+
+.bigger {
+  transform: scale(1.3);
+
+  &::before {
+    background: white;
+  }
+  .smallPic {
+    transform: scale(1.1);
+  }
+}
+
+.white {
+  &::before {
+    background: white;
+  }
+}
+
+.transparent {
+  &::before {
+    background: transparent;
+  }
+}
+
+.selected {
+  &::before {
+    background: white;
+  }
+}

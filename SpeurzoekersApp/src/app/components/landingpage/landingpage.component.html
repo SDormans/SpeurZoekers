@@ -1,0 +1,42 @@
+<div class="background-canvas">
+  <div class="honeycomb-container">
+    <div class="honeycomb">
+      <div class="right-column">
+        <div class="hexagon blue">
+          <img class="hexagon-image" src="assets/photo/map.png" />
+          <button routerLink="/map" mat-raised-button class="hexagon-button">spel</button>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="hexagon red">
+          <img class="hexagon-image" src="assets/photo/kinderen-spelend klein.jpg"/>
+          <button routerLink="/activities" mat-raised-button class="hexagon-button">activiteiten</button>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="hexagon azure">
+          <span class="score">{{ distance }}</span>
+          <img class="hexagon-image" src="assets/photo/feet klein.jpg" />
+          <button routerLink="/" mat-raised-button class="hexagon-button">meters gelopen</button>
+        </div>
+      </div>
+
+      <div class="left-column">
+        <div class="hexagon green">
+          <img class="hexagon-image" src="assets/photo/honing-comb.png" />
+          <button routerLink="/biotopes" mat-raised-button class="hexagon-button">mijn soorten</button>
+        </div>
+      </div>
+
+      <div class="left-column">
+        <div class="hexagon orange">
+          <span class="score">{{ totalAnswered }}</span>
+          <img class="hexagon-image" src="assets/photo/vlinder1.jpg" />
+          <button mat-raised-button class="hexagon-button">mijn punten</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

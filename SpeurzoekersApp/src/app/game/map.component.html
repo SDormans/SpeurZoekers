@@ -1,0 +1,19 @@
+<div>
+  <div id="map" class="map"></div>
+  <div
+    id="popup"
+    class="hidden"
+    (click)="gotoCollectibleInfo()"
+    (clickOutside)="hide()"
+    [attachOutsideOnClick]="attachOutsideOnClick"
+  >
+    <h4 id="header">{{ collectibleNameAndPoints.name }}</h4>
+    <img src="{{ collectibleImage }}" />
+    <div class="badge">
+      <div class="num">{{ collectibleNameAndPoints.points }}</div>
+      <div class="word">punten</div>
+    </div>
+    <p id="footer">Klik hier!</p>
+  </div>
+  <div id="border" class="hidden"></div>
+</div>
