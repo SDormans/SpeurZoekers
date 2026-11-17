@@ -141,3 +141,14 @@ _NCrunch*
 SpeurzoekersApp/.vscode/*.*
 SpeurzoekersService/.vscode/*.*
 launchSettings.json
+
+# Local configuration and credentials
+**/appsettings*.json
+!appsettings.template.json
+**/dbsettings*.json
+**/secrets*.json
+.env*
+!.env.example
+*.pem
+*.key
+*.pfx
